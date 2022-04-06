@@ -10,7 +10,7 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-header button, h3 {
+header button, h3, .top.nav li a {
     text-transform: uppercase;
 }
 
@@ -32,7 +32,7 @@ li {
     margin: 8px 0;
 }
 
-a:hover, h4:hover, i:hover, h3 {
+a:hover, h4:hover, i:hover, h3, .home {
     color: white;
 }
 
@@ -43,6 +43,12 @@ button {
 
 button:active {
     transform: translateY(2px);
+}
+
+main .playlist button span, main .playlist button i, .top.nav ul li {
+    line-height: 50px;
+    vertical-align: middle;
+    display: inline-block;
 }
 
 
@@ -83,6 +89,7 @@ header button:hover {
 
 
 /* ------------- MAIN ------------- */
+/* ----- LEFT COL ----- */
 main, main a, main h4, main i {
     color: rgb(163 , 163, 163);
 }
@@ -124,12 +131,6 @@ main aside button i {
     font-size: 50px;
 }
 
-main .playlist button span, main .playlist button i {
-    line-height: 50px;
-    vertical-align: middle;
-    display: inline-block;
-}
-
 main h4 {
     font-size: 18px;
 }
@@ -162,19 +163,60 @@ main h4 {
     display: inline-block;
 }
 
+.bottom.aside {
+    width: 84%;
+}
+
+/* ----- RIGHT COL ----- */
+main .right.col {
+    min-width: calc(100vw - 250px);
+    height: 620px;
+    padding-top: 60px;
+    padding-left: 250px;
+    background-color: rgb(20, 25, 34);
+}
+
+.top.nav {
+    text-align: center;
+}
+
+.top.nav li {
+    margin: 0 20px;
+    font-weight: 700;
+}
+
+.in-evidenza {
+    position: relative;
+}
+
+.in-evidenza::after {
+    content: "____";
+    color: lime;
+    position: absolute;
+    left: 40px;
+    top: -8px;
+}
 
 
 
-/* * {
+
+
+
+
+
+
+
+
+.right.col, .right.col * {
     border: 1px solid yellow;
-} */
+}
 
 
 
 /* ------------ RESPONSIVE ------------ */
 /* da 0 a 600px */
 @media screen and (max-width: 600px) {
-    main .left.col img[src="img/logo.svg"], main div.playlist, main span, main h3 {
+    main .left.col img[src="img/logo.svg"], main div.playlist, main span, main h3, hr {
         display: none;
     }
 
@@ -184,5 +226,11 @@ main h4 {
     
     main .left.col {
         width: 70px;
+    }
+
+    main .right.col {
+        min-width: calc(100vw - 70px);
+        padding-top: 60px;
+        padding-left: 70px;
     }
 }
