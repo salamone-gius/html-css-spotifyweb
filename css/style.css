@@ -54,11 +54,12 @@ main .playlist button span, main .playlist button i, .top.nav ul li {
 
 /* ------------ HEADER ------------ */
 header .fixed.container {
-    width: 100vw;
+    width: 60vw;
     height: 60px;
     margin: auto;
     position: fixed;
     top: 0;
+    right: 0;
     z-index: 10;
 }
 
@@ -93,24 +94,18 @@ main, main a, main h4, main i {
     color: rgb(163 , 163, 163);
 }
 
-main .container{
-    position: relative;
-}
-
 main .left.col {
     width: 220px;
-    min-height: 620px;
     padding: 0 20px;
     padding-top: 8px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 11;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 0;
 }
 
 main .left.col img[src="img/logo.svg"] {
     height: 40px;
-    margin-bottom: 10px;
+    margin-left: -40px;
 }
 
 main .left.col img[src="img/logo-small.svg"] {
@@ -126,7 +121,7 @@ main .left.col li img, main .left.col li span, .account > * {
 }
 
 main aside button i {
-    font-size: 50px;
+    font-size: 40px;
 }
 
 main h4 {
@@ -136,11 +131,6 @@ main h4 {
 .download.app img {
     height: 20px;
     vertical-align: bottom;
-}
-
-.bottom.aside {
-    position: absolute;
-    bottom: 0;
 }
 
 .account > img {
@@ -153,17 +143,8 @@ main h4 {
     margin: 8px 0;
 }
 
-.playlist {
-    margin-top: 18px;
-    overflow-y: auto;
-}
-
 .account > span {
     display: inline-block;
-}
-
-.bottom.aside {
-    width: 84%;
 }
 
 .bottom.aside span {
@@ -178,18 +159,16 @@ main h4 {
     content: "";
     border-left: 2px solid lime;
     position: absolute;
-    top: 0px;
-    left: -10px;
+    top: 8px;
+    left: -15px;
     height: 25px;
 }
 
 /* ----- RIGHT COL ----- */
 main .right.col {
     min-width: calc(100vw - 220px);
-    height: 620px;
-    padding-top: 60px;
-    padding-left: 220px;
     background-color: rgb(20, 25, 34);
+    margin-top: 60px;
 }
 
 .top.nav {
@@ -214,18 +193,14 @@ main .right.col {
 }
 
 .albums {
-    height: 510px;
+    max-height: 510px;
     overflow-y: auto;
 }
 
-.albums > .row {
-    flex-wrap: nowrap;
-}
-
 .card {
-    width: 10vw;
+    width: calc((100% / 6) - 20px);
     cursor: pointer;
-    margin: 10px 24px;
+    margin: 10px;
 }
 
 .cover > img {
@@ -254,6 +229,7 @@ main .right.col {
 .cover {
     position: relative;
     width: 100%;
+    margin-top: 10px;
 }
 
 .cover:hover img {
@@ -269,7 +245,7 @@ main .right.col {
 }
 
 .albums .row.title, .albums .row.subtitle {
-    margin: 8px 0 0 24px;
+    margin: 10px 0 0 10px;
 }
 
 .flex.row {
@@ -284,6 +260,7 @@ footer {
     bottom: 0;
     left: 0;
     z-index: 12;
+    background-color: rgb(40, 40, 40);
 }
 
 
@@ -299,7 +276,7 @@ footer {
 
 
 
-footer, footer * {
+footer * {
     border: 1px solid yellow;
 }
 
@@ -315,7 +292,7 @@ footer, footer * {
 /* da 701px a 1100px */
 @media screen and (max-width: 1100px) {
     .card {
-        width: 12vw;
+        width: calc((100% / 4) - 20px);
     }
 
     .albums > .row {
@@ -326,7 +303,7 @@ footer, footer * {
 /* da 601px a 700px */
 @media screen and (max-width: 700px) {
     .card {
-        width: 20vw;
+        width: calc((100% / 2) - 20px);
     }
 }
 
@@ -342,15 +319,5 @@ footer, footer * {
     
     main .left.col {
         width: 70px;
-    }
-
-    main .right.col {
-        min-width: calc(100vw - 70px);
-        padding-top: 60px;
-        padding-left: 70px;
-    }
-
-    .card {
-        width: 30vw;
     }
 }
