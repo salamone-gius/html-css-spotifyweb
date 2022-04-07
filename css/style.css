@@ -10,12 +10,12 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-header button, h3, .top.nav li a {
+header button, .left.col h3, .top.nav li a {
     text-transform: uppercase;
 }
 
 /* ----------- COMMONS ----------- */
-body {
+body, header .fixed.container, main .left.col {
     background-color: black;
 }
 
@@ -32,7 +32,7 @@ li {
     margin: 8px 0;
 }
 
-a:hover, h4:hover, i:hover, h3, .home {
+a:hover, h4:hover, i:hover, h3, h4.title, .home {
     color: white;
 }
 
@@ -60,7 +60,6 @@ header .fixed.container {
     position: fixed;
     top: 0;
     z-index: 10;
-    background-color: lightgray;
 }
 
 header .flex.row {
@@ -99,15 +98,14 @@ main .container{
 }
 
 main .left.col {
-    width: 250px;
-    height: 620px;
+    width: 220px;
+    min-height: 620px;
     padding: 0 20px;
     padding-top: 8px;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 11;
-    background-color: brown;
 }
 
 main .left.col img[src="img/logo.svg"] {
@@ -157,6 +155,7 @@ main h4 {
 
 .playlist {
     margin-top: 18px;
+    overflow-y: auto;
 }
 
 .account > span {
@@ -167,12 +166,29 @@ main h4 {
     width: 84%;
 }
 
+.bottom.aside span {
+    margin-left: 6px;
+}
+
+.limebord {
+    position: relative;
+}
+
+.active::before {
+    content: "";
+    border-left: 2px solid lime;
+    position: absolute;
+    top: 0px;
+    left: -10px;
+    height: 25px;
+}
+
 /* ----- RIGHT COL ----- */
 main .right.col {
-    min-width: calc(100vw - 250px);
+    min-width: calc(100vw - 220px);
     height: 620px;
     padding-top: 60px;
-    padding-left: 250px;
+    padding-left: 220px;
     background-color: rgb(20, 25, 34);
 }
 
@@ -197,18 +213,83 @@ main .right.col {
     top: -8px;
 }
 
+.albums {
+    height: 510px;
+    overflow-y: auto;
+}
+
+.albums > .row {
+    flex-wrap: nowrap;
+}
+
+.card {
+    width: 10vw;
+    cursor: pointer;
+    margin: 10px 24px;
+}
+
+.cover > img {
+    width: 100%;
+}
+
+.card * {
+    font-size: 1em;
+    text-align: center;
+}
+
+.card .description > * {
+    font-size: 0.8em;
+    margin-top: 3px;
+}
+.play > i {
+    width: 100%;
+    color: white;
+    font-size: 45px;
+    line-height: 114px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.cover {
+    position: relative;
+}
+
+.cover:hover img {
+    opacity: 0.3;
+}
+  
+.cover:hover i {
+    opacity: 1;
+}
+
+.third.row .cover, .third.row img {
+    border-radius: 100%;
+}
+
+.albums .row.title, .albums .row.subtitle {
+    margin: 8px 0 0 24px;
+}
+
+.flex.row {
+    margin-bottom: 25px;
+}
 
 
 
 
-
-
-
-
-
-
-.right.col, .right.col * {
+/* .right.col, .right.col *, footer {
     border: 1px solid yellow;
+} */
+
+/* -------------- FOOTER -------------- */
+footer {
+    height: 70px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 12;
 }
 
 
