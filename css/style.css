@@ -32,7 +32,7 @@ li {
     margin: 8px 0;
 }
 
-a:hover, h4:hover, i:hover, h3, h4.title, .home {
+a:hover, h4:hover, i:hover, h3, h4.title, .account h4, .home {
     color: white;
 }
 
@@ -242,18 +242,18 @@ main .right.col {
     margin-top: 3px;
 }
 .play > i {
-    width: 100%;
     color: white;
     font-size: 45px;
-    line-height: 114px;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     opacity: 0;
 }
 
 .cover {
     position: relative;
+    width: 100%;
 }
 
 .cover:hover img {
@@ -276,16 +276,10 @@ main .right.col {
     margin-bottom: 25px;
 }
 
-
-
-
-/* .right.col, .right.col *, footer {
-    border: 1px solid yellow;
-} */
-
 /* -------------- FOOTER -------------- */
 footer {
-    height: 70px;
+    width: 100vw;
+    height: 75px;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -294,10 +288,51 @@ footer {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+footer, footer * {
+    border: 1px solid yellow;
+}
+
+
+
+
+
+
+
+
+
 /* ------------ RESPONSIVE ------------ */
+/* da 701px a 1100px */
+@media screen and (max-width: 1100px) {
+    .card {
+        width: 12vw;
+    }
+
+    .albums > .row {
+        flex-wrap: wrap;
+    }
+}
+
+/* da 601px a 700px */
+@media screen and (max-width: 700px) {
+    .card {
+        width: 20vw;
+    }
+}
+
 /* da 0 a 600px */
 @media screen and (max-width: 600px) {
-    main .left.col img[src="img/logo.svg"], main div.playlist, main span, main h3, hr {
+    main .left.col img[src="img/logo.svg"], main div.playlist, main span, .left.col h3, .left.col h4, hr {
         display: none;
     }
 
@@ -313,5 +348,9 @@ footer {
         min-width: calc(100vw - 70px);
         padding-top: 60px;
         padding-left: 70px;
+    }
+
+    .card {
+        width: 30vw;
     }
 }
