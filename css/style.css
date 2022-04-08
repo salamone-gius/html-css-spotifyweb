@@ -99,6 +99,10 @@ main {
     height: calc(100vh - 75px);
 }
 
+main .flex.container {
+    height: 100%;
+}
+
 main .left.col {
     width: 220px;
     padding: 0 20px;
@@ -174,6 +178,7 @@ main .right.col {
     min-width: calc(100% - 220px);
     background-color: rgb(20, 25, 34);
     margin-top: 60px;
+    overflow: hidden;
 }
 
 .top.nav {
@@ -198,7 +203,6 @@ main .right.col {
 }
 
 .albums {
-    max-height: 510px;
     overflow-y: auto;
 }
 
