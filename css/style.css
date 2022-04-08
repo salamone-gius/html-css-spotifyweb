@@ -59,7 +59,7 @@ main .playlist button span, main .playlist button i, .top.nav ul li {
 
 /* ------------ HEADER ------------ */
 header .fixed.container {
-    width: 60vw;
+    width: calc(100% - 220px);
     height: 60px;
     margin: auto;
     position: fixed;
@@ -442,6 +442,6 @@ footer .middle.flex.col {
     }
 
     .card {
-        width: calc(100%) - 20px);
+        width: calc((100%) - 20px);
     }
 }
