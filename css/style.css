@@ -110,6 +110,7 @@ main .left.col {
     flex-direction: column;
     justify-content: space-between;
     flex-shrink: 0;
+    overflow: hidden;
 }
 
 main .left.col img[src="img/logo.svg"] {
@@ -146,6 +147,11 @@ main h4 {
     background-color: rgb(163, 163, 163);
     border-radius: 50%;
     padding: 3px;
+}
+
+.playlist-list {
+    max-height: 150px;
+    overflow-y: auto;
 }
 
 .bottom.aside > div {
@@ -203,6 +209,7 @@ main .right.col {
 }
 
 .albums {
+    height: calc(100vh - 160px);
     overflow-y: auto;
 }
 
@@ -326,35 +333,27 @@ footer .bar {
 }
 
 .volume.bar .white.bar {
-    width: 30px;
+    width: 3vw;
 }
 
 .volume.bar .grey.bar {
-    width: 100px;
+    width: 8vw;
 }
 
 .bar:hover .white.bar{
     background-color: lime;
 }
 
-footer .flex.col .white.bar::after {
+footer .flex.col .grey.bar::after {
     content: "";
     width: 12px;
     height: 12px;
     border-radius: 100px;
     background-color: white;
     position: absolute;
-    top: -5px;
+    top: -4px;
     z-index: 1;
-    display: none;
-}
-
-footer .right.flex.col .white.bar::after {
-    left: 24px;
-}
-
-footer .middle.flex.col .white.bar::after {
-    left: 45px;
+    /* display: none; */
 }
 
 .bar:hover footer .flex.col .white.bar::after {
@@ -387,11 +386,11 @@ footer .middle.flex.col {
 }
 
 .time.bar .white.bar {
-    width: 50px;
+    width: 5vw;
 }
 
 .time.bar .grey.bar {
-    width: 250px;
+    width: 15vw;
 }
 
 .flex.time-bar > .time {
@@ -399,21 +398,6 @@ footer .middle.flex.col {
     color: white;
     margin: 0 10px;
 }
-
-
-
-
-
-/* footer * {
-    border: 1px solid yellow;
-} */
-
-
-
-
-
-
-
 
 
 /* ------------ RESPONSIVE ------------ */
@@ -432,6 +416,10 @@ footer .middle.flex.col {
 @media screen and (max-width: 700px) {
     .card {
         width: calc((100% / 2) - 20px);
+    }
+
+    footer .right.flex.col .flex.box > i {
+        display: none;
     }
 }
 
