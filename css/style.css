@@ -96,7 +96,7 @@ header button:hover {
 /* ------------- MAIN ------------- */
 /* ----- LEFT COL ----- */
 main {
-    height: calc(100vh - 75px);
+    height: calc(100vh - 80px);
 }
 
 main .flex.container {
@@ -174,8 +174,8 @@ main h4 {
     content: "";
     border-left: 2px solid lime;
     position: absolute;
-    top: 8px;
-    left: -15px;
+    top: 0;
+    left: -10px;
     height: 25px;
 }
 
@@ -189,6 +189,7 @@ main .right.col {
 
 .top.nav {
     text-align: center;
+    position: relative;
 }
 
 .top.nav li {
@@ -196,16 +197,36 @@ main .right.col {
     font-weight: 700;
 }
 
+main .top.nav li i.fa-solid.fa-bars {
+    font-size: 30px;
+    display: none;
+}
+
+main .top.nav ul.hamburger {
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 140px;
+    z-index: 13;
+    background-color: black;
+    display: none;
+}
+
+.fa-solid.fa-bars:active main .top.nav > ul.hamburger {
+    display: block;
+}
+
 .in-evidenza {
     position: relative;
 }
 
 .in-evidenza::after {
-    content: "____";
-    color: lime;
+    content: "";
+    width: 40px;
+    border-bottom: 2px solid lime;
     position: absolute;
-    left: 40px;
-    top: -8px;
+    left: 36px;
+    top: 20px;
 }
 
 .albums {
@@ -311,7 +332,7 @@ footer .favorites {
 }
 
 footer i {
-    margin-right: 15px;
+    margin: 0 10px;
 }
 
 footer .bar {
@@ -344,7 +365,7 @@ footer .bar {
     background-color: lime;
 }
 
-footer .flex.col .grey.bar::after {
+.grey.bar::after {
     content: "";
     width: 12px;
     height: 12px;
@@ -353,10 +374,10 @@ footer .flex.col .grey.bar::after {
     position: absolute;
     top: -4px;
     z-index: 1;
-    /* display: none; */
+    display: none;
 }
 
-.bar:hover footer .flex.col .white.bar::after {
+.bar:hover .grey.bar::after {
     display: block;
 }
 
@@ -367,6 +388,7 @@ footer .middle.flex.col {
 
 .flex.controls {
     align-items: center;
+    justify-content: space-between;
 }
 
 .controls i {
@@ -418,14 +440,18 @@ footer .middle.flex.col {
         width: calc((100% / 2) - 20px);
     }
 
-    footer .right.flex.col .flex.box > i {
+    footer .right.flex.col .flex.box > i, footer .favorites, main .top.nav li.disappear, footer .playing.time {
         display: none;
+    }
+
+    main .top.nav li i.fa-solid.fa-bars {
+        display: block;
     }
 }
 
 /* da 0 a 600px */
 @media screen and (max-width: 600px) {
-    main .left.col img[src="img/logo.svg"], main div.playlist, main span, .left.col h3, main .left.col h4, hr {
+    main .left.col img[src="img/logo.svg"], main div.playlist, main span, .left.col h3, main .left.col h4, hr, footer .left.flex.col img {
         display: none;
     }
 
@@ -440,4 +466,13 @@ footer .middle.flex.col {
     .card {
         width: calc((100%) - 20px);
     }
+
+    .controls i {
+        font-size: 10px;
+    }
+    
+    .controls i:nth-child(3) {
+        font-size: 18px;
+    }
+    
 }
